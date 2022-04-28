@@ -3,6 +3,18 @@ from random import randint,choice
 from itertools import combinations
 
 def LexBFS(G):
+    """
+        Implementing the LexBFS algortihm, which gives a simplicial ordering for chordal graphs.
+
+        Parapmeters
+        -----------
+        G: a simply NetworkX graph
+
+        Returns
+        -------
+        order: a dic which gives a number (place in the ordering) to every nodes 
+    """
+
     nodes=set(G.nodes)
     i=len(nodes)
     ls_sets=[nodes]
@@ -22,7 +34,7 @@ def LexBFS(G):
 
 
 def is_chordal(G):
-        """Checks whether G is a chordal graph.
+        """Checks if G is a chordal graph.
 
         A graph is chordal if every cycle of length at least 4 has a chord
         (an edge joining two nodes not adjacent in the cycle).
